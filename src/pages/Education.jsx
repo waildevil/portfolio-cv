@@ -12,7 +12,7 @@ export default function Education() {
     {
       logo: "/images/fh-aachen.png",
       school: "FH Aachen - Germany",
-      years: "2022 – 2024",
+      years: "2022 – 2025",
       degree: "Bachelor’s degree, Computer Software Engineering",
     },
   ];
