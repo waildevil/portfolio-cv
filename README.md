@@ -122,4 +122,4 @@ Want to get in touch?
 ## 📄 License
 
 This project is intended for personal and educational use.  
-© 2024 Mohamed Wail Homan — All rights reserved.
+© 2025 Mohamed Wail Homan — All rights reserved.
