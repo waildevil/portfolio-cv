@@ -54,13 +54,21 @@ export default function About() {
           I'm currently looking for my first professional opportunity as a backend developer, ideally in a team where I can contribute to real-world projects, grow technically, and gain hands-on experience
         </p>
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 gap-[20px]" >
+          <a
+            href="/Mohamed-Wail-Homan_CV_English.pdf"
+            download
+            className="px-5 py-2 bg-black text-white rounded hover:bg-gray-800 transition duration-300"
+          >
+            Download CV English
+          </a>
+
           <a
             href="/Mohamed-Wail-Homan_CV.pdf"
             download
             className="px-5 py-2 bg-black text-white rounded hover:bg-gray-800 transition duration-300"
           >
-            Download CV
+            Download CV German
           </a>
         </div>
 
