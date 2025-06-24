@@ -103,44 +103,51 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Modal */}
+      
       {selectedProject && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
-          <div className="bg-white w-full max-w-xl p-6 rounded shadow-lg overflow-y-auto max-h-[90vh]">
-            <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-            <img src={selectedProject.image} alt={selectedProject.title} className="mb-4 rounded w-full h-48 object-cover" />
-            <p className="mb-2"><strong>Context:</strong> {selectedProject.context}</p>
-            <div className="mb-4">
-              <strong>Details:</strong>
-              <p className="mt-1 text-sm">{selectedProject.details}</p>
-            </div>
-            <div className="mb-4">
-              <strong>Technologies:</strong>
-              <ul className="flex flex-wrap gap-2 mt-1">
-                {selectedProject.technologies?.map((tech, idx) => (
-                  <li key={idx} className="px-2 py-1 bg-gray-200 text-sm rounded">{tech}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex justify-between mt-6">
-              <a
-                href={selectedProject.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800"
-              >
-                View on GitHub
-              </a>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="px-4 py-2 bg-gray-300 text-sm rounded hover:bg-gray-400"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+  <div
+    className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4"
+    onClick={() => setSelectedProject(null)} // Close on background click
+  >
+    <div
+      className="bg-white w-full max-w-xl p-6 rounded shadow-lg overflow-y-auto max-h-[90vh]"
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+    >
+      <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
+      <img src={selectedProject.image} alt={selectedProject.title} className="mb-4 rounded w-full h-48 object-cover" />
+      <p className="mb-2"><strong>Context:</strong> {selectedProject.context}</p>
+      <div className="mb-4">
+        <strong>Details:</strong>
+        <p className="mt-1 text-sm">{selectedProject.details}</p>
+      </div>
+      <div className="mb-4">
+        <strong>Technologies:</strong>
+        <ul className="flex flex-wrap gap-2 mt-1">
+          {selectedProject.technologies?.map((tech, idx) => (
+            <li key={idx} className="px-2 py-1 bg-gray-200 text-sm rounded">{tech}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex justify-between mt-6">
+        <a
+          href={selectedProject.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800"
+        >
+          View on GitHub
+        </a>
+        <button
+          onClick={() => setSelectedProject(null)}
+          className="px-4 py-2 bg-gray-300 text-sm rounded hover:bg-gray-400"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </motion.div>
   );
 }

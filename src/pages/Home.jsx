@@ -6,9 +6,10 @@ const myImage = "/images/programming.jpg";
 
 export default function Home() {
   return (
-    <div className="flex flex-col h-full min-h-[calc(100vh-64px)]" style={{height:'300px'}}>
-      <div className="flex flex-col md:flex-row items-center justify-center px-6 py-16 gap-10 flex-grow">
+    <div className="flex-grow flex flex-col justify-center items-center px-6 py-16 gap-10">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full max-w-6xl">
         
+        {/* Text Block */}
         <div className="text-center md:text-left max-w-xl">
           <motion.h1
             className="text-6xl md:text-7xl font-bold mb-6 leading-tight"
@@ -52,7 +53,7 @@ export default function Home() {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex justify-center"
+            className="mt-8 flex justify-center md:justify-start"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.2 }}
@@ -64,10 +65,9 @@ export default function Home() {
               View My Projects
             </a>
           </motion.div>
-
-
         </div>
 
+        {/* Image Block */}
         <motion.img
           src={myImage}
           alt="Wail illustration"

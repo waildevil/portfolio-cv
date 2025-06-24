@@ -14,7 +14,7 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
-        <div className="flex-grow" style={{height:'300px'}}>
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
