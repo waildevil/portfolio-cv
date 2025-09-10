@@ -6,15 +6,20 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Skills from "./pages/Skills";
 import Navbar from "./components/Navbar";
-import Footer from './components/Footer';
+import Footer from "./components/Footer";
 
 function App() {
+
+  const NAVBAR_IS_FIXED = true;
+
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      
+      <div className="min-h-screen flex flex-col">
         <Navbar />
 
-        <div className="flex-grow" style={{height:'300px'}}>
+        
+        <main className={`flex-1 ${NAVBAR_IS_FIXED ? "pt-16" : ""}`}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -23,13 +28,12 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/skills" element={<Skills />} />
           </Routes>
-        </div>
+        </main>
 
         <Footer />
       </div>
     </Router>
   );
 }
-
 
 export default App;
